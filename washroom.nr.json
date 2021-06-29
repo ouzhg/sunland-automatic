@@ -1,0 +1,397 @@
+[
+    {
+        "id": "56ffc300.fec2bc",
+        "type": "tab",
+        "label": "主卫",
+        "disabled": false,
+        "info": ""
+    },
+    {
+        "id": "63cabdaa.353c44",
+        "type": "server-state-changed",
+        "z": "56ffc300.fec2bc",
+        "name": "door",
+        "server": "fbf547a1.f39438",
+        "version": 1,
+        "exposeToHomeAssistant": false,
+        "haConfig": [
+            {
+                "property": "name",
+                "value": ""
+            },
+            {
+                "property": "icon",
+                "value": ""
+            }
+        ],
+        "entityidfilter": "binary_sensor.mainwash_contact",
+        "entityidfiltertype": "exact",
+        "outputinitially": true,
+        "state_type": "str",
+        "haltifstate": "on",
+        "halt_if_type": "str",
+        "halt_if_compare": "is",
+        "outputs": 2,
+        "output_only_on_state_change": false,
+        "for": 0,
+        "forType": "num",
+        "forUnits": "minutes",
+        "ignorePrevStateNull": false,
+        "ignorePrevStateUnknown": false,
+        "ignorePrevStateUnavailable": false,
+        "ignoreCurrentStateUnknown": false,
+        "ignoreCurrentStateUnavailable": false,
+        "x": 110,
+        "y": 100,
+        "wires": [
+            [
+                "e5d82bca.8cecb8"
+            ],
+            [
+                "db6f2185.c9901"
+            ]
+        ]
+    },
+    {
+        "id": "eb6d8d4b.abf8",
+        "type": "api-call-service",
+        "z": "56ffc300.fec2bc",
+        "name": "top on",
+        "server": "fbf547a1.f39438",
+        "version": 1,
+        "debugenabled": false,
+        "service_domain": "light",
+        "service": "turn_on",
+        "entityId": "light.mainwash_top_light1, light.mainwash_top_light2, light.mainwash_top_light3",
+        "data": "{\"transition\":2}",
+        "dataType": "json",
+        "mergecontext": "",
+        "output_location": "",
+        "output_location_type": "none",
+        "mustacheAltTags": false,
+        "x": 550,
+        "y": 40,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "f84114cf.b6e548",
+        "type": "server-state-changed",
+        "z": "56ffc300.fec2bc",
+        "name": "move",
+        "server": "fbf547a1.f39438",
+        "version": 1,
+        "exposeToHomeAssistant": false,
+        "haConfig": [
+            {
+                "property": "name",
+                "value": ""
+            },
+            {
+                "property": "icon",
+                "value": ""
+            }
+        ],
+        "entityidfilter": "binary_sensor.mainwash_motion",
+        "entityidfiltertype": "exact",
+        "outputinitially": false,
+        "state_type": "str",
+        "haltifstate": "on",
+        "halt_if_type": "str",
+        "halt_if_compare": "is",
+        "outputs": 2,
+        "output_only_on_state_change": false,
+        "for": 0,
+        "forType": "num",
+        "forUnits": "minutes",
+        "ignorePrevStateNull": false,
+        "ignorePrevStateUnknown": false,
+        "ignorePrevStateUnavailable": false,
+        "ignoreCurrentStateUnknown": false,
+        "ignoreCurrentStateUnavailable": false,
+        "x": 110,
+        "y": 40,
+        "wires": [
+            [
+                "8a903443.7fc0c8"
+            ],
+            []
+        ]
+    },
+    {
+        "id": "8a903443.7fc0c8",
+        "type": "change",
+        "z": "56ffc300.fec2bc",
+        "name": "move",
+        "rules": [
+            {
+                "t": "set",
+                "p": "move",
+                "pt": "flow",
+                "to": "on",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 390,
+        "y": 40,
+        "wires": [
+            [
+                "eb6d8d4b.abf8",
+                "50c7cbb.443d734"
+            ]
+        ]
+    },
+    {
+        "id": "db6f2185.c9901",
+        "type": "change",
+        "z": "56ffc300.fec2bc",
+        "name": "close",
+        "rules": [
+            {
+                "t": "set",
+                "p": "move",
+                "pt": "flow",
+                "to": "off",
+                "tot": "str"
+            },
+            {
+                "t": "set",
+                "p": "door",
+                "pt": "flow",
+                "to": "off",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 390,
+        "y": 120,
+        "wires": [
+            [
+                "50c7cbb.443d734"
+            ]
+        ]
+    },
+    {
+        "id": "e5d82bca.8cecb8",
+        "type": "change",
+        "z": "56ffc300.fec2bc",
+        "name": "open",
+        "rules": [
+            {
+                "t": "set",
+                "p": "move",
+                "pt": "flow",
+                "to": "off",
+                "tot": "str"
+            },
+            {
+                "t": "set",
+                "p": "door",
+                "pt": "flow",
+                "to": "on",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 390,
+        "y": 80,
+        "wires": [
+            [
+                "eb6d8d4b.abf8",
+                "50c7cbb.443d734"
+            ]
+        ]
+    },
+    {
+        "id": "f11b33fa.be17b",
+        "type": "api-call-service",
+        "z": "56ffc300.fec2bc",
+        "name": "top off",
+        "server": "fbf547a1.f39438",
+        "version": 1,
+        "debugenabled": false,
+        "service_domain": "light",
+        "service": "turn_off",
+        "entityId": "light.mainwash_top_light1, light.mainwash_top_light2, light.mainwash_top_light3",
+        "data": "{}",
+        "dataType": "json",
+        "mergecontext": "",
+        "output_location": "",
+        "output_location_type": "none",
+        "mustacheAltTags": false,
+        "x": 550,
+        "y": 160,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "88a1dc8c.47be1",
+        "type": "delay",
+        "z": "56ffc300.fec2bc",
+        "name": "delay",
+        "pauseType": "delayv",
+        "timeout": "2",
+        "timeoutUnits": "minutes",
+        "rate": "1",
+        "nbRateUnits": "1",
+        "rateUnits": "second",
+        "randomFirst": "1",
+        "randomLast": "5",
+        "randomUnits": "seconds",
+        "drop": false,
+        "x": 390,
+        "y": 160,
+        "wires": [
+            [
+                "f11b33fa.be17b"
+            ]
+        ]
+    },
+    {
+        "id": "334bea3c.5f9c46",
+        "type": "inject",
+        "z": "56ffc300.fec2bc",
+        "name": "open",
+        "props": [],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payloadType": "str",
+        "x": 270,
+        "y": 80,
+        "wires": [
+            [
+                "e5d82bca.8cecb8"
+            ]
+        ]
+    },
+    {
+        "id": "11ad5659.df76ba",
+        "type": "inject",
+        "z": "56ffc300.fec2bc",
+        "name": "close",
+        "props": [],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "x": 270,
+        "y": 120,
+        "wires": [
+            [
+                "db6f2185.c9901"
+            ]
+        ]
+    },
+    {
+        "id": "d8ef88ea.6d42b8",
+        "type": "inject",
+        "z": "56ffc300.fec2bc",
+        "name": "move",
+        "props": [],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payloadType": "str",
+        "x": 270,
+        "y": 40,
+        "wires": [
+            [
+                "8a903443.7fc0c8"
+            ]
+        ]
+    },
+    {
+        "id": "5b7883b9.5848fc",
+        "type": "inject",
+        "z": "56ffc300.fec2bc",
+        "name": "delay",
+        "props": [],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payloadType": "str",
+        "x": 270,
+        "y": 160,
+        "wires": [
+            [
+                "f11b33fa.be17b"
+            ]
+        ]
+    },
+    {
+        "id": "e7fac4b4.b094f8",
+        "type": "function",
+        "z": "56ffc300.fec2bc",
+        "name": "delay",
+        "func": "let expireSeconds = 30;\nif (flow.get('move') == 'on') {\n  if (flow.get('door') == 'on') {\n      expireSeconds = 2 * 60;\n  } else {\n      expireSeconds = 30 * 60;\n  }\n}\nreturn [[{reset:true}, {delay:expireSeconds*1000}]];",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 110,
+        "y": 160,
+        "wires": [
+            [
+                "88a1dc8c.47be1"
+            ]
+        ]
+    },
+    {
+        "id": "db6dcd13.d58fd",
+        "type": "link in",
+        "z": "56ffc300.fec2bc",
+        "name": "",
+        "links": [
+            "50c7cbb.443d734"
+        ],
+        "x": 35,
+        "y": 160,
+        "wires": [
+            [
+                "e7fac4b4.b094f8"
+            ]
+        ]
+    },
+    {
+        "id": "50c7cbb.443d734",
+        "type": "link out",
+        "z": "56ffc300.fec2bc",
+        "name": "",
+        "links": [
+            "db6dcd13.d58fd"
+        ],
+        "x": 575,
+        "y": 120,
+        "wires": []
+    },
+    {
+        "id": "fbf547a1.f39438",
+        "type": "server",
+        "name": "Home Assistant",
+        "addon": true
+    }
+]
