@@ -1,0 +1,27 @@
+address: 0.0.1
+client_address: 0.0.2:10
+interface: tpuart
+device: /dev/serial/by-id/usb-1a86_USB2.0-Serial-if00-port0
+usb_filters: ''
+log_error_level: debug
+custom_config: |-
+  [main]
+  addr = 0.0.1
+  client-addrs = 0.0.2:10
+  connections = server,A.tcp,interface
+  logfile = /dev/stdout
+
+  [A.tcp]
+  server = knxd_tcp
+
+  [server]
+  server = ets_router
+  tunnel = tunnel
+  router = router
+  discover = true
+  name = knxd
+
+  [interface]
+  driver = ncn5120
+  device=/dev/serial/by-id/usb-1a86_USB2.0-Serial-if00-port0
+  baudrate = 19200
