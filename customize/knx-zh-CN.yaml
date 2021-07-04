@@ -1,0 +1,157 @@
+climate.master_ac:
+  friendly_name: 主卧空调
+fan.master_ac_volume:
+  friendly_name: 主卧空调风量
+climate.guest_ac:
+  friendly_name: 客卧空调
+fan.guest_ac_volume:
+  friendly_name: 客卧空调风量
+climate.north_ac:
+  friendly_name: 北卧空调
+fan.north_ac_volume:
+  friendly_name: 北卧空调风量
+climate.living_ac1:
+  friendly_name: 客厅空调1
+fan.living_ac1_volume:
+  friendly_name: 客厅空调1风量
+climate.living_ac2:
+  friendly_name: 客厅空调2
+fan.living_ac2_volume:
+  friendly_name: 客厅空调2风量
+climate.dining_ac:
+  friendly_name: 餐厅空调
+fan.dining_ac_volume:
+  friendly_name: 餐厅空调风量
+climate.kitchen_ac:
+  friendly_name: 厨房空调
+fan.kitchen_ac_volume:
+  friendly_name: 厨房空调风量
+  
+light.aisle_outer:
+  friendly_name: 走廊外灯
+light.aisle_inner:
+  friendly_name: 走廊内灯
+light.center_ceil:
+  friendly_name: 玄关吊灯电源
+light.center_ceil_light:
+  friendly_name: 玄关吊灯
+light.center_strip:
+  friendly_name: 玄关灯带
+  
+light.living_ceil:
+  friendly_name: 客厅吊灯电源
+light.living_ceil_light:
+  friendly_name: 客厅吊灯
+light.living_strip:
+  friendly_name: 客厅灯带
+light.living_spot:
+  friendly_name: 客厅射灯
+light.living_wall:
+  friendly_name: 客厅壁灯
+
+light.dining_ceil:
+  friendly_name: 餐厅吊灯电源
+light.dining_ceil_light:
+  friendly_name: 餐厅吊灯
+light.dining_strip:
+  friendly_name: 餐厅灯带
+light.dining_spot:
+  friendly_name: 餐厅射灯
+light.dining_tv:
+  friendly_name: 餐厅电视灯
+  
+light.kitchen_ceil:
+  friendly_name: 厨房吊灯电源
+light.kitchen_ceil_light:
+  friendly_name: 厨房吊灯
+light.kitchen_strip:
+  friendly_name: 厨房灯带
+  
+light.north_balcony:
+  friendly_name: 北阳台灯
+light.south_balcony:
+  friendly_name: 南阳台灯
+light.cloth_rack:
+  friendly_name: 晾衣架灯
+  
+light.master_ceil:
+  friendly_name: 主卧吊灯电源
+light.master_ceil1:
+  friendly_name: 主卧吊灯1
+light.master_ceil2:
+  friendly_name: 主卧吊灯2
+light.master_ceil3:
+  friendly_name: 主卧吊灯3
+light.master_ceil4:
+  friendly_name: 主卧吊灯4
+light.master_ceil5:
+  friendly_name: 主卧吊灯5
+light.master_ceil6:
+  friendly_name: 主卧吊灯6
+light.master_ceil7:
+  friendly_name: 主卧吊灯7
+light.master_ceil8:
+  friendly_name: 主卧吊灯8
+light.master_strip:
+  friendly_name: 主卧灯带
+light.master_bed:
+  friendly_name: 主卧床头灯
+light.master_tv:
+  friendly_name: 主卧电视灯
+light.master_window:
+  friendly_name: 主卧窗台灯
+  
+light.guest_ceil:
+  friendly_name: 客卧吊灯电源
+light.guest_ceil_light:
+  friendly_name: 客卧吊灯
+light.guest_strip:
+  friendly_name: 客卧灯带
+light.guest_bed:
+  friendly_name: 客卧床头灯
+light.guest_tv:
+  friendly_name: 客卧电视灯
+light.guest_window:
+  friendly_name: 客卧窗台灯
+light.guest_entrance:
+  friendly_name: 客卧入口灯
+  
+light.north_ceil:
+  friendly_name: 北卧吊灯电源
+light.north_ceil_light:
+  friendly_name: 北卧吊灯
+light.north_strip:
+  friendly_name: 北卧灯带
+light.north_bed:
+  friendly_name: 北卧床头灯
+light.north_tv:
+  friendly_name: 北卧电视灯
+light.north_window:
+  friendly_name: 北卧窗台灯
+  
+light.master_wash_ceil:
+  friendly_name: 主卫吊灯电源
+light.master_wash_ceil1:
+  friendly_name: 主卫吊灯1
+light.master_wash_ceil2:
+  friendly_name: 主卫吊灯2
+light.master_wash_ceil3:
+  friendly_name: 主卫吊灯3
+light.master_wash_spot:
+  friendly_name: 主卫镜前灯
+light.master_wash_bath:
+  friendly_name: 主卫浴缸灯
+switch.master_wash_fan:
+  friendly_name: 主卫排气扇
+  
+light.guest_wash_spot:
+  friendly_name: 客卫镜前灯
+light.guest_wash_toilet:
+  friendly_name: 客卫马桶灯
+switch.guest_wash_fan:
+  friendly_name: 客卫排气扇
+  
+switch.fresh_air_fan:
+  friendly_name: 新风
+fan.fresh_air_volume:
+  friendly_name: 新风风量
