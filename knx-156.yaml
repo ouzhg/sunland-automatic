@@ -282,3 +282,9 @@ climate:
     min_temp: 16.0
     max_temp: 32.0
     temperature_step: 1.0
+    
+sensor:
+  - name: 'PM25'
+    state_address: '15/0/0'
+    type: 'ppm'
+    sync_state: "expire 5"
